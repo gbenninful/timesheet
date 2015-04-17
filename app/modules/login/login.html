@@ -1,0 +1,67 @@
+<div class="login">
+  <div class="row col-sm-offset-7 col-sm-5">
+    <form novalidate class="form-horizontal col-sm-10 col-sm-offset-1 overlay" name="loginForm" ng-submit="user.register(loginForm)">
+      <h3>Sign Up and enjoy all features</h3>
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="Enter first name" ng-model="user.data.firstName" name="firstName"
+               class="form-control has-error text-danger" required minlength="2"
+               ng-class="{'field-error': loginForm.firstName.$touched || loginForm.$submitted && loginForm.firstName.$invalid}" />
+        <span class="glyphicon text-success form-control-feedback"
+              ng-class="{'glyphicon-ok': loginForm.firstName.$valid}" aria-hidden="true"></span>
+        <div ng-messages="loginForm.firstName.$error" ng-show="loginForm.firstName.$touched || loginForm.$submitted">
+          <div class="text-danger" ng-message="required">First name is required</div>
+          <div class="text-danger" ng-message="minlength">First name too short</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Enter last name" ng-model="user.data.lastName" name="lastName"
+               class="form-control" required
+               ng-class="{'field-error': loginForm.lastName.$touched || loginForm.$submitted  && loginForm.lastName.$invalid}" />
+        <span class="glyphicon text-success form-control-feedback" ng-class="{'glyphicon-ok': loginForm.lastName.$valid}" aria-hidden="true"></span>
+        <div ng-messages="loginForm.lastName.$error" ng-show="loginForm.lastName.$touched || loginForm.$submitted">
+          <div class="text-danger" ng-message="required">Last name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter email address" ng-model="user.data.email" name="email" class="form-control" required
+               ng-class="{'field-error': loginForm.email.$touched || loginForm.$submitted && loginForm.email.$invalid}" />
+        <span class="glyphicon text-success form-control-feedback" ng-class="{'glyphicon-ok': loginForm.email.$valid}" aria-hidden="true"></span>
+        <div ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched || loginForm.$submitted">
+          <div class="text-danger" ng-message="required">Email is required</div>
+          <div class="text-danger" ng-message="email">Input must be an email</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="has-error">Password</label>
+        <input type="password" placeholder="Password" ng-model="user.data.password" name="password" class="form-control has-error"
+               required minlength="5"
+               ng-class="{'field-error': loginForm.password.$touched || loginForm.$submitted  && loginForm.password.$invalid}" />
+        <span class="glyphicon text-success form-control-feedback"
+              ng-class="{'glyphicon-ok': loginForm.password.$valid}" aria-hidden="true"></span>
+        <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched || loginForm.$submitted">
+          <div class="text-danger" ng-message="required">Password is required</div>
+          <div class="text-danger" ng-message="minlength">Password is too short.</div>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="togglePassword" show-password/> Show password
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-warning btn-inline" value="Sign Up" />
+      </div>
+    </form>
+
+    <div
+      class="fb-like"
+      data-share="true"
+      data-width="450"
+      data-show-faces="true">
+    </div>
+
+  </div>
+</div>

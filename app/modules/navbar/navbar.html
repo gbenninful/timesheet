@@ -1,0 +1,48 @@
+<nav class="navbar navbar-default" ng-controller="NavbarCtrl">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="home">Time Clock </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav"></ul>
+      <form novalidate class="navbar-form navbar-right" name="loginForm" ng-submit="user.login(loginForm)">
+        <section class="row">
+        <div class="form-group">
+          <input type="email" placeholder="Enter email address" ng-model="user.data.email" name="email"
+                 class="form-control" required
+                 ng-class="{'field-error': loginForm.email.$touched || loginForm.$submitted && loginForm.email.$invalid}"/>
+          <div ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched || loginForm.$submitted">
+            <div class="text-danger" ng-message="required">Email is required</div>
+            <div class="text-danger" ng-message="email">Input must be an email</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Password" ng-model="user.data.password" name="password"
+                 class="form-control has-error"
+                 required minlength="5"
+                 ng-class="{'field-error': loginForm.password.$touched || loginForm.$submitted  && loginForm.password.$invalid}"/>
+          <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched || loginForm.$submitted">
+            <div class="text-danger" ng-message="required">Password is required</div>
+            <div class="text-danger" ng-message="minlength">Password is too short.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-warning btn-inline" value="Login"/>
+        </div>
+        </section>
+      </form>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,23 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+.navbar-default{
+  border-bottom: 0px;
+}
+$orange : #FF9A00;
+
+
+.__login{
+  background-image: url('../images/pic.png');
+  height: auto;
+  background-size: 100% 100%;
+  min-height: 600px;
+}
+
+footer{
+  background-color: #000000;
+  heigth: 800px;
+  border-top:10px solid $orange;
+}
